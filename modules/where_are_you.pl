@@ -1,29 +1,29 @@
 #!/usr/bin/perl 
 #===============================================================================
 #
-#         FILE: intro.pl
+#         FILE: where_are_you.pl
 #
-#        USAGE: ./intro.pl  
+#        USAGE: ./where_are_you.pl  
 #
-#  DESCRIPTION: using the Intro module
-#
+#  DESCRIPTION: perl modules search path
 #       AUTHOR: Ynon Perek (), ynonperek@gmail.com
 #      COMPANY: 
 #      VERSION: 1.0
-#      CREATED: 10/31/2011 10:51:57
+#      CREATED: 10/31/2011 13:56:20
 #     REVISION: ---
 #===============================================================================
 
 use strict;
 use warnings;
 use Carp;
-# use Intro qw/traditional_greeting greet/;
-use Intro;
+use lib './lib';
 
-# sub traditional_greeting { return "Take me to your dealer\n"; }
+use Calc;
 
-Intro::greet;
-greet;
+local $,="\n";
+print @INC;
+
+
 
 
 
