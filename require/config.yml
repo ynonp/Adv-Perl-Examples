@@ -1,0 +1,5 @@
+window:
+    title: SAMPLE WINDOW TITLE $$$cash$$$
+    width: 50
+    height: 80
+    logfile: /var/log/foo.log
