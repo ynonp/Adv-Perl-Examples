@@ -81,3 +81,21 @@ print $colors->[1], "\n";
 
 }
 
+{
+use List::Util qw/max/;
+
+sub max_value {
+    my ($f1, $f2, $f3, $data) = @_;
+    return max( $f1->($data),
+                $f2->($data),
+                $f3->($data));
+}
+
+sub add_2 { $_[0] + 2 }
+sub mul_2 { $_[0] * 2 }
+sub triple { $_[0] * 3 }
+
+print max_value(\&add_2, \&mul_2, \&triple, 3);
+
+}
+
