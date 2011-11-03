@@ -21,3 +21,9 @@ my $f_ref = \&foo;
 my @copy = @$l_ref;
 my %copy = %$h_ref;
 my $copy = $$x_ref;
+
+# Direct element access from references
+my $first  = $l_ref->[0];
+my $val    = $h_ref->{key};
+my $result = $f_ref->('x', 'y');
+
