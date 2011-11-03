@@ -15,3 +15,9 @@ my $x_ref = \$x;
 
 # create a subroutine ref with \&
 my $f_ref = \&foo;
+
+# note that assignment operator generates
+# a copy operation
+my @copy = @$l_ref;
+my %copy = %$h_ref;
+my $copy = $$x_ref;
