@@ -58,3 +58,16 @@ $p1->{friends} = [$p2, $p3];
 use Data::Dumper;
 print Dumper(\@people);
 }
+
+{
+
+my $actions = [
+    sub { print "hello\n" },
+    sub { print 2 + 2     },
+    sub { die "Muhahaha"  },
+];
+
+$actions->[int rand(@$actions)]->();
+
+}
+
