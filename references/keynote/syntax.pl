@@ -27,3 +27,8 @@ my $first  = $l_ref->[0];
 my $val    = $h_ref->{key};
 my $result = $f_ref->('x', 'y');
 
+my $al_ref = [2, 3, 5];
+my $ah_ref = {
+    Adam   => 'Eve',
+    Bonnie => 'Clyde',
+};
