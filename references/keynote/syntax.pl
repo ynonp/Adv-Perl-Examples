@@ -46,5 +46,15 @@ print $nested_ref->[2]->[1], "\n";
 print $nested_ref->[3]->[1], "\n";
 
 # prints 4
-print scalar @$nested_ref;
+print scalar @$nested_ref, "\n";
+
+my $p1 = { name => 'Tom', age => 18 };
+my $p2 = { name => 'Tim', age => 21 };
+my $p3 = { name => 'Martha', age => 22 };
+
+my @people = ($p1, $p2);
+$p1->{friends} = [$p2, $p3];
+
+use Data::Dumper;
+print Dumper(\@people);
 }
