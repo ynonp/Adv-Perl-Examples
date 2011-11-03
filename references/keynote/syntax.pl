@@ -71,3 +71,13 @@ $actions->[int rand(@$actions)]->();
 
 }
 
+{
+
+sub gen_colors { [qw/red blue green/] }
+
+my $colors = gen_colors;
+print $colors->[1], "\n";
+
+
+}
+
