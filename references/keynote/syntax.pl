@@ -97,5 +97,12 @@ sub triple { $_[0] * 3 }
 
 print max_value(\&add_2, \&mul_2, \&triple, 3);
 
+my $f_ref = sub { 
+    my ($x, $y) = @_;
+    return $x + $y;
+};
+
+# returns 5
+$f_ref->(2, 3);
 }
 
