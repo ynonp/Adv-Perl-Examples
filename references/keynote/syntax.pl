@@ -112,8 +112,12 @@ sub print_data_bad {
     my ($name, $color, $age, $home, $work) = @_;
 }
 
+use Carp;
 sub print_data_good {
     my ($name, $params) = @_;
+
+    croak "invalid argument" 
+        if ref($params) ne 'HASH';
 
     my $color = $params->{color} || "blue";
     my $age   = $params->{age} || 0;
@@ -127,7 +131,3 @@ print_data_good('James', { age => 18, home => 'Moon' });
 }
 
 
-
-}
-
-}
