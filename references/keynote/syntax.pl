@@ -106,3 +106,28 @@ my $f_ref = sub {
 $f_ref->(2, 3);
 }
 
+{
+
+sub print_data_bad {
+    my ($name, $color, $age, $home, $work) = @_;
+}
+
+sub print_data_good {
+    my ($name, $params) = @_;
+
+    my $color = $params->{color} || "blue";
+    my $age   = $params->{age} || 0;
+    my $home  = $params->{home};
+    my $work  = $params->{work};
+}
+
+print_data_good('James', { age => 18, home => 'Moon' });
+
+
+}
+
+
+
+}
+
+}
