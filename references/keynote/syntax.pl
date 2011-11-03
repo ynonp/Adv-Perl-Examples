@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 
+{
 my (@l, %h, $x);
 sub foo { }
 
@@ -32,3 +33,18 @@ my $ah_ref = {
     Adam   => 'Eve',
     Bonnie => 'Clyde',
 };
+}
+
+{
+# Nested lists
+my $nested_ref = [1, 2, [3, 4, 3], [qw/a b c/]];
+
+# prints 4
+print $nested_ref->[2]->[1], "\n";
+
+# prints b
+print $nested_ref->[3]->[1], "\n";
+
+# prints 4
+print scalar @$nested_ref;
+}
