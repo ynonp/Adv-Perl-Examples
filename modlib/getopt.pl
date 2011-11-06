@@ -8,3 +8,4 @@ my %opts;
 getopts('oif:', \%opts);
 
 print Dumper(\%opts);
+print "@ARGV\n";
