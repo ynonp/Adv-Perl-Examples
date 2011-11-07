@@ -24,7 +24,7 @@ sub add_to_list {
     my ($l_ref, $el) = @_;
 
     croak 'Invalid Argument' 
-        if ref($l_ref) ne 'LIST';
+        if ref($l_ref) ne 'ARRAY';
 
     push @$l_ref, $el;
 }
