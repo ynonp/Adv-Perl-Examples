@@ -1,0 +1,11 @@
+<html>
+    <body>
+        <ul>
+            [% FOREACH person IN community %]
+            <li>[% person.name %]</li>
+            [% END %]
+
+        </ul>
+    </body>
+</html>
+
