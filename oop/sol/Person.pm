@@ -4,11 +4,8 @@ package Person;
 #
 #         FILE: Person.pm
 #
-#  DESCRIPTION: 
+#  DESCRIPTION: A Person class
 #
-#        FILES: ---
-#         BUGS: ---
-#        NOTES: ---
 #       AUTHOR: Ynon Perek (), ynonperek@gmail.com
 #      COMPANY: 
 #      VERSION: 1.0
@@ -19,14 +16,18 @@ package Person;
 use strict;
 use warnings;
 use Carp;
+use Scalar::Util qw/looks_like_number/;
+use Hash::Util qw/lock_keys/;
 
 sub new {
     my ($cls, %data) = @_;
-    my $self = {};
+    my $self = { };
 
     bless $self, $cls;
 
     $self->init(%data);
+
+    lock_keys(%$self);
 
     return $self;
 }
@@ -40,8 +41,8 @@ sub grow_up {
 sub init {
     my ($self, %data) = @_;
 
-    $self->{name} = $data{name};
-    $self->{age}  = $data{age};
+    $self->set_name($data{name});
+    $self->set_age ($data{age});
 
     return $self;
 }
@@ -53,6 +54,7 @@ sub get_name {
 
 sub set_name {
     my ($self, $name) = @_;
+    croak 'Name cannot be empty' if length($name) == 0;
     $self->{name} = $name;
 }
 
@@ -63,6 +65,9 @@ sub get_age {
 
 sub set_age {
     my ($self, $age) = @_;
+    croak 'Age must be numeric' if ! looks_like_number($age);
+    croak 'Age must be > 0 and < 120' if ( $age < 0 ) || ( $age > 120 );
+    
     $self->{age} = $age;
 }
 

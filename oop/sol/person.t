@@ -3,11 +3,8 @@
 #
 #         FILE: person.t
 #
-#  DESCRIPTION: 
+#  DESCRIPTION: testing the people
 #
-#        FILES: ---
-#         BUGS: ---
-#        NOTES: ---
 #       AUTHOR: Ynon Perek (), ynonperek@gmail.com
 #      COMPANY: 
 #      VERSION: 1.0
@@ -25,15 +22,26 @@ use Test::More;
 my $p = Person->new(name => 'Tom', age => 0);
 my $q = Person->new(name => 'Tim', age => 5);
 
-my $s = Student->new(name => 'Nobody', age => 5, grade => 11);
+eval {
+    my $dead = Person->new(name => "Dracula", age => 380 );
+};
+ok ( $@ );
+
+
+# also a good way
+# my $r = Person->new({ name => 'James', age => 10});
+
+
+#my $s = Student->new(name => 'Nobody', age => 5, grade => 11);
 
 $p->grow_up;
 $q->grow_up;
 
 is ( $p->get_age, 1 );
 is ( $q->get_age, 6 );
-is ( $s->get_grade, 11);
-ok ( $s->is_smart );
+
+#is ( $s->get_grade, 11);
+#ok ( $s->is_smart );
 
 
 done_testing();

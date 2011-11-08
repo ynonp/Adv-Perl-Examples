@@ -22,7 +22,8 @@ use warnings;
 use Carp;
 use Person;
 
-our @ISA = qw/Person/;
+use base 'Person';
+#our @ISA = qw/Person/;
 
 sub set_grade {
     my ($self, $grade) = @_;
