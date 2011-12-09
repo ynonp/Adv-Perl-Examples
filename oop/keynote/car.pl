@@ -1,7 +1,7 @@
 package Car;
 use Moose;
 
-has 'speed', is => 'ro', isa => 'Num';
+has 'speed', is => 'ro', isa => 'Num', required => 1;
 
 sub go {
     my $self = shift;
