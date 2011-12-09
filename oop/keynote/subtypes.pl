@@ -7,6 +7,8 @@ subtype 'age',
     where { $_ >= 0 && $_ <= 120 },
     message { "Invalid Age: $_ "};
 
+enum 'EyeColor', [qw/green blue brown gray/];
+
 has 'age', is => 'rw', isa => 'age', default => 0;
 
 package main;
