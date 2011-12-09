@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Fatal qw/open close/;
+#use autodie;
 
 sub count_lines {
     my ($filename) = @_;

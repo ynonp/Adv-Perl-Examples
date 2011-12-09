@@ -1,4 +1,4 @@
-package ModuleName
+package ModuleName;
 use strict;
 use warnings;
 
