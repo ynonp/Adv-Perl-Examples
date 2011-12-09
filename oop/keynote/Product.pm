@@ -13,3 +13,4 @@ has 'price' => (
     writer => 'set_price',
 );
 
+1;
