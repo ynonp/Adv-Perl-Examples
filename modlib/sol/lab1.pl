@@ -36,8 +36,14 @@ sub wanted {
 
 restore_state;
 
+# set all values to 0
+$needles->{$_} = 0 for (keys %$needles);
+
 find(\&wanted, ".");
 print "total: $counter\n";
+
+# delete all entries with value == 0
+delete $needles->{$_} for (grep { $needles->{$_} == 0 } keys %$needles);
 
 save_state;
 
