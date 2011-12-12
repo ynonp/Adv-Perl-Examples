@@ -1,4 +1,3 @@
-#
 #===============================================================================
 #
 #         FILE: calc.t
@@ -6,7 +5,7 @@
 #  DESCRIPTION: Unit test file for Calc.pm
 #
 #       AUTHOR: Ynon Perek (), ynonperek@gmail.com
-#      COMPANY: 
+#      COMPANY:
 #      VERSION: 1.0
 #      CREATED: 10/31/2011 14:19:21
 #     REVISION: ---
@@ -15,19 +14,13 @@
 use strict;
 use warnings;
 
-use Test::More tests => 4;
+use Test::More;
 use lib './lib';
+use Calc;
 
-diag("Starting to test Calc");
+is ( Calc::plus(3, 3), 6 , "plus");
+is ( Calc::minus(3, 1), 2, "minus" );
 
-ok(1);
-is(3, 3, "Failinnnnnnnng" );
-
-is ( Calc::plus(3, 3), 5 );
-die 'goodbye cruel world';
-
-is ( Calc::minus(3, 1), 2 );
-
-
+done_testing;
 
 
