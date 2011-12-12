@@ -4,7 +4,7 @@ package Series::Arithmetic;
 #
 #         FILE: Arithmetic.pm
 #
-#  DESCRIPTION: Write A Series::Fibonacci module
+#  DESCRIPTION: Write A Series::Arithmetic module
 #
 #       AUTHOR: Ynon Perek (), ynonperek@gmail.com
 #      COMPANY: 
