@@ -20,9 +20,13 @@ sub save_file {
 
 my $USAGE = <<"END";
     Usage: editor.pl <filename>
+
+    This is a simple text editor written in Tk
+    Hope you find it useful
 END
 
 my $filename = shift or die $USAGE;
+
 my $w = MainWindow->new;
 my $t = $w->Text->pack;
 my $save_btn = $w->Button(

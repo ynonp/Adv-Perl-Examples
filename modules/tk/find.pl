@@ -13,17 +13,24 @@ sub find_in_files {
     return keys %needles;
 }
 
+##########################################
+#
+
 sub generate_find_handler {
     my ($textentry, $lb) = @_;
 
     return sub {
         $lb->delete(0, 'end');
+
         my $term = $textentry->get();
         my @results = find_in_files($term);
+
         $lb->insert('end', @results);
     }
 }
 
+########################################
+#
 
 my $w = MainWindow->new;
 $w->Label(-text => "File Finder")->pack;
