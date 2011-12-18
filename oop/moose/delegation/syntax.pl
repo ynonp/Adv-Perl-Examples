@@ -7,3 +7,4 @@ has 'email' => (
     is      => 'ro',
     handles => [ qw/send_mail/ ]
 );
+
