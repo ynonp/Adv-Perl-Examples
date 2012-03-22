@@ -22,10 +22,11 @@ my_q(2);
 my_q(3);
 my_q('foo');
 
-is(my_count(), 3, "counting elements after queue");
-is(my_dq(), 2, "dequeue first");
-is(my_dq(), 3, "dequeue second");
-is(my_dq(), 'foo', "dequeue a string");
+#  Operation   Expected     Name
+is(my_count(), 3,           "counting elements after queue");
+is(my_dq(),    2,           "dequeue first");
+is(my_dq(),    3,           "dequeue second");
+is(my_dq(),    'foo',       "dequeue a string");
 
 my $undef = my_dq();
 ok ( ! defined($undef), "undef on empty queue" );

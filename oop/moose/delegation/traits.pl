@@ -11,12 +11,11 @@ has 'q' => (
     handles => {
         add_item => 'push',
         next_item => 'shift',
+        count     => 'count',
     },
 );
 
 package main;
 my $q = Queue->new;
 $q->add_item(10, 20);
-
-use Data::Dumper;
-warn Dumper($q->q);
+print $q->count, "\n";

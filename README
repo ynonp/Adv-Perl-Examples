@@ -1,6 +1,26 @@
 Welcome to Advanced Perl course
 
 This project holds all examples & solutions for the class
+Examples Outline:
+
+├── references
+│   ├── closures
+│   ├── prototypes
+│   └── sol
+├── modules
+│   ├── Config
+│   ├── Stack
+│   ├── modlib
+│   │   └── sol
+│   ├── sol
+│   │   └── Series
+│   ├── tk
+│   └── typeglobs
+├── oop
+│   ├── moose
+│   │   └── ZombieHangout
+│   └── sol
+
 Have a great time learning perl !
 
 Ynon

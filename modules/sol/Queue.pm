@@ -55,12 +55,12 @@ Queue - A sample perl queue implementation
   # prints 2
   print my_dq, "\n";
 
-  # pritns 1
+  # prints 1
   print my_count, "\n";
 
 =head1 DESCRIPTION
 
-This is a queueu module implementing a simple Queue
+This is a queue module implementing a simple Queue
 Have fun using it
 
 =over
