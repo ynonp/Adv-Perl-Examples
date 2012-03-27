@@ -3,9 +3,9 @@ use warnings;
 use v5.14;
 use Algorithm::Combinatorics qw/combinations permutations/;
 
-my @numbers = qw/9 27 24 4 34 12/;
-my @ops     = qw{* - * + +};
-my $goal    = -21708;
+my @numbers = qw/2 4 6 8/;
+my @ops     = qw{* - + /};
+my $goal    = 25;
 
 my %ops = (
     'a+b' => sub { @_ == 2 ? $_[0] + $_[1] : "($_[0] + $_[1])" },
@@ -25,7 +25,11 @@ my @parsed_ops = parse_ops(@ops);
 
 OUT: foreach my $np ( permutations( \@numbers ) ) {
     foreach my $op ( permutations( \@parsed_ops) ) {
-        my $sol = solves([@$np], $op, $goal);
+
+        my $sol;
+        eval {
+            $sol = solves([@$np], $op, $goal);
+        };
 
         if ( $sol ) {
             say "sol = $sol";
