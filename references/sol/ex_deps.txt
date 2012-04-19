@@ -1,0 +1,4 @@
+Luke: Han Solo, Leia, Yoda
+Leia: Padme Amidala, Anakin Skywalker
+Obi-Wan: Yoda
+Darth Vader: Anakin Skywalker
