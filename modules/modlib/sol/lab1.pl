@@ -7,7 +7,7 @@ use Storable;
 my $needles;
 
 my $STATE_FILE = 'state.bin';
-my $counter = 0;
+my $new_files_count = 0;
 
 sub restore_state {
     eval {
@@ -26,7 +26,7 @@ sub wanted {
 
     while (<$fh>) {
         if ( /holy grail/ ) {
-            $counter += 1 if ! exists $needles->{$filename};
+            $new_files_count += 1 if ! exists $needles->{$filename};
             $needles->{$filename} = 1;
         }
     }
@@ -39,11 +39,16 @@ restore_state;
 # set all values to 0
 $needles->{$_} = 0 for (keys %$needles);
 
+# For each file, increase its value in the dictionary
 find(\&wanted, ".");
-print "total: $counter\n";
+print "total: $new_files_count\n";
 
 # delete all entries with value == 0
-delete $needles->{$_} for (grep { $needles->{$_} == 0 } keys %$needles);
+# They're leftovers from previous rounds that were not
+# found in this one
+foreach my $filename (keys %$needles) {
+    delete $needles->{$filename} if ! $needles->{$filename};
+}
 
 save_state;
 
